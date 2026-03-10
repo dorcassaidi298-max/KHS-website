@@ -607,6 +607,72 @@ footer {
 .value-item h4 { font-size: 0.95rem; margin-bottom: 4px; }
 .value-item p { font-size: 0.85rem; color: var(--grey-mid); }
 
+/* ====== STAGES GRID ====== */
+.stages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px; margin-top: 48px;
+}
+
+.stage-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.stage-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+
+.stage-img {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.stage-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.stage-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(17,17,17,0.85), rgba(17,17,17,0.4));
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 24px;
+  opacity: 1;
+  transition: var(--transition);
+}
+
+.stage-card:hover .stage-overlay {
+  background: linear-gradient(to top, rgba(17,17,17,0.9), rgba(17,17,17,0.6));
+}
+
+.stage-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem; font-weight: 900;
+  color: var(--red); line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stage-title {
+  color: white; font-family: 'Playfair Display', serif;
+  font-size: 1.25rem; font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stage-overlay p {
+  color: rgba(255,255,255,0.8); font-size: 0.9rem;
+  line-height: 1.6; margin: 0;
+}
+
+.stage-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* ====== ANIMATIONS ====== */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
