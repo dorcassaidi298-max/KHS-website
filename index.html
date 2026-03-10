@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kenla Home Style – Professional Interior Finishing | Harare, Zimbabwe</title>
+<meta name="description" content="Kenla Home Style offers professional ceiling installation, wall skimming, painting, and custom cupboards across Zimbabwe. Get a free quote today.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --red: #D72020;
+  --red-dark: #AA1515;
+  --black: #111111;
+  --charcoal: #222222;
+  --gold: #C9A84C;
+  --beige: #F5F0E8;
+  --grey-light: #F2F2F2;
+  --grey-mid: #888888;
+  --white: #FFFFFF;
+  --shadow: 0 8px 40px rgba(0,0,0,0.12);
+  --shadow-sm: 0 2px 12px rgba(0,0,0,0.08);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--black);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+/* ====== PAGES ====== */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ====== NAV ====== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: rgba(17,17,17,0.97);
+  backdrop-filter: blur(12px);
+  padding: 0 5%;
+  height: 72px;
+  display: flex; align-items: center; justify-content: space-between;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  transition: var(--transition);
+}
+
+.nav-logo {
+  display: flex; align-items: center; gap: 10px; cursor: pointer;
+  text-decoration: none;
+}
+
+.nav-logo-text { 
+  font-family: 'Playfair Display', serif; 
+  color: var(--white); 
+  font-size: 1.1rem; 
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.nav-logo-text span { color: var(--red); }
+
+.nav-logo-icon {
+  width: 44px; height: 44px;
+  background: var(--red);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  color: white; font-weight: 900; font-size: 1.1rem;
+}
+
+.nav-links {
+  display: flex; align-items: center; gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 2px; background: var(--red);
+  transform: scaleX(0); transition: var(--transition);
+}
+
+.nav-links a:hover { color: white; }
+.nav-links a:hover::after, .nav-links a.active-link::after { transform: scaleX(1); }
+.nav-links a.active-link { color: white; }
+
+.nav-cta {
+  background: var(--red);
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600 !important;
+  transition: var(--transition) !important;
+}
+.nav-cta:hover { background: var(--red-dark) !important; }
+.nav-cta::after { display: none !important; }
+
+.hamburger {
+  display: none;
+  flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 4px;
+}
+.hamburger span {
+  width: 26px; height: 2px; background: white;
+  transition: var(--transition); border-radius: 2px;
+}
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
+  background: rgba(17,17,17,0.98);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  color: white; text-decoration: none;
+  font-size: 1.4rem; font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.mobile-menu a:hover { color: var(--red); }
+.mobile-menu .mob-cta {
+  background: var(--red); padding: 14px 36px;
+  border-radius: var(--radius-sm); font-size: 1rem !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+/* ====== BUTTONS ====== */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px; border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600; font-size: 0.95rem;
+  text-decoration: none; cursor: pointer; border: none;
+  transition: var(--transition); letter-spacing: 0.02em;
+}
+.btn-red { background: var(--red); color: white; }
+.btn-red:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(215,32,32,0.4); }
+.btn-white { background: white; color: var(--black); }
+.btn-white:hover { background: var(--beige); transform: translateY(-2px); }
+.btn-whatsapp { background: #25D366; color: white; }
+.btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.4); }
+.btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.5); }
+.btn-outline:hover { background: white; color: var(--black); }
+
+/* ====== SECTION STYLES ====== */
+section { padding: 80px 5%; }
+.section-label {
+  display: inline-block;
+  color: var(--red); font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700; line-height: 1.15;
+  margin-bottom: 16px;
+}
+.section-sub {
+  color: var(--grey-mid); font-size: 1.05rem;
+  line-height: 1.7; max-width: 560px;
+}
+
+/* ====== HERO ====== */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(17,17,17,0.88) 0%, rgba(17,17,17,0.7) 60%, rgba(215,32,32,0.25) 100%),
+    url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&q=80') center/cover no-repeat;
+  display: flex; align-items: center;
+  padding-top: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(to top, white, transparent);
+}
+
+.hero-content {
+  max-width: 680px;
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(215,32,32,0.2);
+  border: 1px solid rgba(215,32,32,0.4);
+  color: #ff7a7a; font-size: 0.8rem; font-weight: 600;
+  padding: 6px 14px; border-radius: 100px;
+  margin-bottom: 24px; letter-spacing: 0.05em; text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 900; color: white;
+  line-height: 1.1; margin-bottom: 20px;
+}
+.hero h1 em { color: var(--red); font-style: normal; }
+
+.hero-sub {
+  color: rgba(255,255,255,0.8); font-size: 1.1rem;
+  line-height: 1.7; margin-bottom: 36px; max-width: 500px;
+}
+
+.hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.hero-stats {
+  display: flex; gap: 40px;
+  margin-top: 56px; padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.stat-item { color: white; }
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 700; color: var(--red);
+  line-height: 1;
+}
+.stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.65); margin-top: 4px; }
+
+/* ====== SERVICES CARDS ====== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px; margin-top: 48px;
+}
+
+.service-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: var(--red);
+  transform: scaleX(0); transition: var(--transition);
+}
+
+.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-icon {
+  width: 56px; height: 56px;
+  background: rgba(215,32,32,0.08);
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; color: var(--red);
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem; margin-bottom: 10px;
+}
+
+.service-card p { color: var(--grey-mid); font-size: 0.9rem; line-height: 1.6; margin-bottom: 16px; }
+
+.service-price {
+  display: inline-flex; align-items: center;
+  background: var(--beige); color: var(--red);
+  font-weight: 700; font-size: 0.85rem;
+  padding: 6px 12px; border-radius: 100px;
+}
+
+.service-learn {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--red); font-size: 0.85rem; font-weight: 600;
+  margin-top: 14px; cursor: pointer; transition: var(--transition);
+}
+.service-learn:hover { gap: 10px; }
+
+/* ====== PROCESS ====== */
+.process-section { background: var(--black); }
+.process-section .section-title { color: white; }
+.process-section .section-sub { color: rgba(255,255,255,0.6); }
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px; margin-top: 48px;
+}
+
+.process-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  position: relative;
+}
+
+.process-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem; font-weight: 900;
+  color: rgba(215,32,32,0.15); line-height: 1;
+  margin-bottom: 8px;
+}
+
+.process-stage {
+  color: var(--red); font-size: 0.8rem;
+  font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+
+.process-card h3 {
+  color: white; font-family: 'Playfair Display', serif;
+  font-size: 1.25rem; margin-bottom: 16px;
+}
+
+.process-list { list-style: none; }
+.process-list li {
+  color: rgba(255,255,255,0.65); font-size: 0.9rem;
+  padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex; align-items: center; gap: 10px;
+}
+.process-list li i { color: var(--red); font-size: 0.75rem; }
+
+/* ====== WHY CHOOSE US ====== */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; margin-top: 48px;
+}
+.why-card {
+  text-align: center; padding: 32px 20px;
+  background: white; border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+.why-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem; font-weight: 900; color: var(--red);
+}
+.why-label { color: var(--grey-mid); font-size: 0.9rem; margin-top: 6px; }
+
+/* ====== AREAS ====== */
+.areas-section { background: var(--beige); }
+.areas-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px; margin-top: 32px;
+}
+.area-tag {
+  background: white; border-radius: var(--radius-sm);
+  padding: 10px 16px; font-size: 0.9rem; font-weight: 500;
+  text-align: center; box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.area-tag:hover { background: var(--red); color: white; }
+
+/* ====== PRICING ====== */
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px; margin-top: 40px;
+}
+.price-card {
+  background: white; border-radius: var(--radius);
+  padding: 28px 24px; text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+.price-card:hover { border-color: var(--red); transform: translateY(-4px); }
+.price-card i { font-size: 2rem; color: var(--red); margin-bottom: 14px; display: block; }
+.price-card h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 8px; }
+.price-card .price { font-size: 1.5rem; font-weight: 700; color: var(--red); margin-bottom: 8px; }
+.price-card p { font-size: 0.85rem; color: var(--grey-mid); }
+.price-disclaimer {
+  margin-top: 28px; padding: 14px 20px;
+  background: var(--beige); border-radius: var(--radius-sm);
+  font-size: 0.85rem; color: var(--grey-mid);
+  border-left: 3px solid var(--gold);
+}
+
+/* ====== CTA ====== */
+.cta-section {
+  background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
+  text-align: center; padding: 80px 5%;
+}
+.cta-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: white; margin-bottom: 14px;
+}
+.cta-section p { color: rgba(255,255,255,0.8); margin-bottom: 32px; font-size: 1.05rem; }
+
+/* ====== FAQ ====== */
+.faq-list { margin-top: 40px; max-width: 720px; }
+.faq-item {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+.faq-q {
+  width: 100%; text-align: left; background: none; border: none;
+  padding: 20px 0; display: flex; justify-content: space-between; align-items: center;
+  font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600;
+  cursor: pointer; transition: var(--transition);
+}
+.faq-q:hover { color: var(--red); }
+.faq-q i { font-size: 0.8rem; color: var(--red); transition: var(--transition); }
+.faq-q.open i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s;
+  color: var(--grey-mid); font-size: 0.95rem; line-height: 1.7;
+}
+.faq-a.open { max-height: 300px; padding-bottom: 20px; }
+
+/* ====== CONTACT ====== */
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; margin-top: 40px; align-items: start;
+}
+.contact-info-item {
+  display: flex; gap: 16px; margin-bottom: 24px; align-items: flex-start;
+}
+.contact-icon {
+  width: 44px; height: 44px; min-width: 44px;
+  background: rgba(215,32,32,0.08); border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--red); font-size: 1rem;
+}
+.contact-info-item h4 { font-size: 0.85rem; color: var(--grey-mid); margin-bottom: 4px; }
+.contact-info-item p, .contact-info-item a {
+  font-size: 0.95rem; font-weight: 500; color: var(--black); text-decoration: none;
+}
+.map-embed {
+  width: 100%; height: 220px; border-radius: var(--radius);
+  border: none; margin-top: 16px;
+}
+
+.contact-form { display: flex; flex-direction: column; gap: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 0.85rem; font-weight: 600; }
+.form-group input, .form-group textarea, .form-group select {
+  padding: 12px 16px; border: 1.5px solid rgba(0,0,0,0.1);
+  border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem; transition: var(--transition);
+  background: white;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  outline: none; border-color: var(--red); box-shadow: 0 0 0 3px rgba(215,32,32,0.1);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+
+/* ====== FLOATING WHATSAPP ====== */
+.whatsapp-float {
+  position: fixed; bottom: 28px; right: 28px; z-index: 900;
+  width: 58px; height: 58px;
+  background: #25D366; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; color: white;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+  text-decoration: none; transition: var(--transition);
+  animation: pulse 2s infinite;
+}
+.whatsapp-float:hover { transform: scale(1.1); }
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.5); }
+  50% { box-shadow: 0 6px 40px rgba(37,211,102,0.8); }
+}
+
+/* ====== FOOTER ====== */
+footer {
+  background: var(--charcoal);
+  color: rgba(255,255,255,0.7);
+  padding: 60px 5% 30px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px; margin-bottom: 40px;
+}
+.footer-brand h3 {
+  font-family: 'Playfair Display', serif;
+  color: white; font-size: 1.3rem; margin-bottom: 12px;
+}
+.footer-brand h3 span { color: var(--red); }
+.footer-brand p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; }
+.footer-socials { display: flex; gap: 12px; }
+.social-icon {
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.08); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: white; text-decoration: none; font-size: 0.85rem;
+  transition: var(--transition);
+}
+.social-icon:hover { background: var(--red); }
+.footer-col h4 {
+  color: white; font-size: 0.9rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links a {
+  color: rgba(255,255,255,0.6); text-decoration: none;
+  font-size: 0.9rem; transition: var(--transition); cursor: pointer;
+}
+.footer-links a:hover { color: var(--red); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.85rem;
+}
+.footer-bottom span { color: var(--red); }
+
+/* ====== SERVICE PAGE HERO ====== */
+.page-hero {
+  min-height: 360px;
+  background: linear-gradient(135deg, rgba(17,17,17,0.9) 0%, rgba(215,32,32,0.3) 100%),
+    var(--bg-img, url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80')) center/cover;
+  display: flex; align-items: flex-end;
+  padding: 40px 5% 60px;
+  padding-top: 120px;
+}
+.page-hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: white; font-weight: 900; margin-bottom: 12px;
+}
+.page-hero-content p {
+  color: rgba(255,255,255,0.8); max-width: 520px; line-height: 1.7;
+}
+.breadcrumb {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 16px;
+}
+.breadcrumb span { color: var(--red); }
+
+/* ====== GALLERY ====== */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px; margin-top: 40px;
+}
+.gallery-item {
+  border-radius: var(--radius); overflow: hidden;
+  aspect-ratio: 4/3; position: relative; cursor: pointer;
+}
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(17,17,17,0.7), transparent);
+  opacity: 0; transition: var(--transition);
+  display: flex; align-items: flex-end; padding: 16px;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay span { color: white; font-weight: 600; font-size: 0.9rem; }
+
+/* ====== ABOUT ====== */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: center; margin-top: 40px;
+}
+.about-img {
+  border-radius: var(--radius);
+  overflow: hidden; position: relative;
+}
+.about-img img { width: 100%; display: block; }
+.about-img-badge {
+  position: absolute; bottom: 24px; right: -20px;
+  background: white; border-radius: var(--radius);
+  padding: 16px 20px; box-shadow: var(--shadow);
+}
+.about-img-badge .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; color: var(--red); font-weight: 900;
+}
+.about-img-badge .label { font-size: 0.8rem; color: var(--grey-mid); }
+.values-list { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
+.value-item { display: flex; gap: 14px; align-items: flex-start; }
+.value-icon {
+  width: 36px; height: 36px; min-width: 36px;
+  background: rgba(215,32,32,0.08); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--red); font-size: 0.9rem;
+}
+.value-item h4 { font-size: 0.95rem; margin-bottom: 4px; }
+.value-item p { font-size: 0.85rem; color: var(--grey-mid); }
+
+/* ====== ANIMATIONS ====== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.6s ease both; }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  
+  .hero { padding: 120px 5% 80px; }
+  .hero-stats { gap: 24px; flex-wrap: wrap; }
+  
+  .contact-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .form-row { grid-template-columns: 1fr; }
+  .about-img-badge { right: 16px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  section { padding: 60px 5%; }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons { flex-direction: column; }
+  .hero-buttons .btn { text-align: center; justify-content: center; }
+}
+
+/* ====== ACTIVE PAGE TAB ====== */
+.tab-active { color: white !important; }
+
+/* ====== SERVICE PAGE DETAIL ====== */
+.service-detail-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; margin-top: 40px; align-items: start;
+}
+.service-detail-img { border-radius: var(--radius); overflow: hidden; }
+.service-detail-img img { width: 100%; display: block; }
+.checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
+.checklist li { display: flex; gap: 12px; align-items: flex-start; font-size: 0.95rem; }
+.checklist li i { color: var(--red); margin-top: 3px; }
+
+@media (max-width: 768px) {
+  .service-detail-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo" onclick="showPage('home')">
+    <div class="nav-logo-icon">KHS</div>
+    <div class="nav-logo-text"><span>Kenla</span> Home Style</div>
+  </div>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')" id="nav-home" class="active-link">Home</a></li>
+    <li><a onclick="showPage('services')" id="nav-services">Services</a></li>
+    <li><a onclick="showPage('about')" id="nav-about">About</a></li>
+    <li><a onclick="showPage('gallery')" id="nav-gallery">Gallery</a></li>
+    <li><a onclick="showPage('faq')" id="nav-faq">FAQ</a></li>
+    <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+    <li><a onclick="showPage('contact')" class="nav-cta">Get a Free Quote</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="showPage('home');closeMenu()">Home</a>
+  <a onclick="showPage('services');closeMenu()">Services</a>
+  <a onclick="showPage('about');closeMenu()">About</a>
+  <a onclick="showPage('gallery');closeMenu()">Gallery</a>
+  <a onclick="showPage('faq');closeMenu()">FAQ</a>
+  <a onclick="showPage('contact');closeMenu()">Contact</a>
+  <a onclick="showPage('contact');closeMenu()" class="mob-cta">Get a Free Quote</a>
+</div>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/26377822595" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ============================================================ -->
+<!-- PAGE: HOME -->
+<!-- ============================================================ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-star"></i> Zimbabwe's Trusted Interior Specialists</div>
+      <h1>Transform Your Space with <em>Professional</em> Finishing</h1>
+      <p class="hero-sub">We specialize in ceilings, wall skimming, painting, and custom interior solutions across Zimbabwe. Quality craftsmanship at transparent prices.</p>
+      <div class="hero-buttons">
+        <a onclick="showPage('contact')" class="btn btn-red"><i class="fas fa-file-alt"></i> Get a Free Quote</a>
+        <a href="https://wa.me/26377822595" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item"><div class="stat-num">3+</div><div class="stat-label">Years Experience</div></div>
+        <div class="stat-item"><div class="stat-num">100+</div><div class="stat-label">Projects Completed</div></div>
+        <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Client Satisfaction</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section style="background:var(--grey-light)">
+    <div style="text-align:center;max-width:600px;margin:0 auto 0">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Our Professional Services</h2>
+      <p class="section-sub" style="margin:0 auto">From ceiling installation to custom cupboards — every project delivered with precision and care.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" onclick="showPage('ceilings')">
+        <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+        <h3>Ceiling Installation</h3>
+        <p>Professional suspended ceilings, cornices, and ceiling boards installed to perfection using quality materials.</p>
+        <div class="service-price"><i class="fas fa-tag" style="margin-right:6px;font-size:0.7rem"></i> From $6 per m²</div>
+        <div class="service-learn">Learn more <i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="service-card" onclick="showPage('wallskimming')">
+        <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
+        <h3>Wall Skimming</h3>
+        <p>Achieve perfectly smooth walls with our expert skimming and plastering service, ready for any finish.</p>
+        <div class="service-price"><i class="fas fa-tag" style="margin-right:6px;font-size:0.7rem"></i> From $4 per m²</div>
+        <div class="service-learn">Learn more <i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="service-card" onclick="showPage('painting')">
+        <div class="service-icon"><i class="fas fa-brush"></i></div>
+        <h3>Painting</h3>
+        <p>Interior and exterior painting services using premium paints for a lasting, beautiful finish on every surface.</p>
+        <div class="service-price"><i class="fas fa-tag" style="margin-right:6px;font-size:0.7rem"></i> From $4 per m²</div>
+        <div class="service-learn">Learn more <i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="service-card" onclick="showPage('cupboards')">
+        <div class="service-icon"><i class="fas fa-th-large"></i></div>
+        <h3>Custom Cupboards</h3>
+        <p>Built-in and freestanding custom cupboards designed and crafted to match your space and style perfectly.</p>
+        <div class="service-price"><i class="fas fa-tag" style="margin-right:6px;font-size:0.7rem"></i> Half of material price</div>
+        <div class="service-learn">Learn more <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process-section">
+    <div style="text-align:center;max-width:600px;margin:0 auto 0">
+      <span class="section-label" style="color:#ff7a7a">How We Work</span>
+      <h2 class="section-title">Our Transformation Process</h2>
+      <p class="section-sub" style="margin:0 auto;color:rgba(255,255,255,0.6)">A structured 3-stage process that ensures quality from start to finish, every single time.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="process-num">01</div>
+        <div class="process-stage">Stage 1</div>
+        <h3>Preparation</h3>
+        <ul class="process-list">
+          <li><i class="fas fa-check"></i> Site inspection</li>
+          <li><i class="fas fa-check"></i> Accurate measurements</li>
+          <li><i class="fas fa-check"></i> Surface preparation</li>
+          <li><i class="fas fa-check"></i> Material planning</li>
+        </ul>
+      </div>
+      <div class="process-card">
+        <div class="process-num">02</div>
+        <div class="process-stage">Stage 2</div>
+        <h3>Transformation</h3>
+        <ul class="process-list">
+          <li><i class="fas fa-check"></i> Ceiling installation</li>
+          <li><i class="fas fa-check"></i> Wall skimming</li>
+          <li><i class="fas fa-check"></i> Structural adjustments</li>
+          <li><i class="fas fa-check"></i> Skilled craftsmanship</li>
+        </ul>
+      </div>
+      <div class="process-card">
+        <div class="process-num">03</div>
+        <div class="process-stage">Stage 3</div>
+        <h3>Finishing & Perfection</h3>
+        <ul class="process-list">
+          <li><i class="fas fa-check"></i> Painting & detailing</li>
+          <li><i class="fas fa-check"></i> Final polishing</li>
+          <li><i class="fas fa-check"></i> Quality inspection</li>
+          <li><i class="fas fa-check"></i> Client approval</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section>
+    <div style="text-align:center">
+      <span class="section-label">Why Us</span>
+      <h2 class="section-title">Why Choose Kenla Home Style?</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-num">3+</div><div class="why-label">Years Experience</div></div>
+      <div class="why-card"><div class="why-num">100+</div><div class="why-label">Projects Completed</div></div>
+      <div class="why-card"><i class="fas fa-shield-alt" style="color:var(--red);font-size:2rem;margin-bottom:10px;display:block"></i><div class="why-num" style="font-size:1.3rem">Quality</div><div class="why-label">Professional Finishing</div></div>
+      <div class="why-card"><i class="fas fa-dollar-sign" style="color:var(--red);font-size:2rem;margin-bottom:10px;display:block"></i><div class="why-num" style="font-size:1.3rem">Value</div><div class="why-label">Affordable Pricing</div></div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREAS -->
+  <section class="areas-section">
+    <div style="text-align:center;max-width:600px;margin:0 auto 0">
+      <span class="section-label">Coverage</span>
+      <h2 class="section-title">We Serve All Regions in Zimbabwe</h2>
+      <p class="section-sub" style="margin:0 auto">Based in Harare, Kenla Home Style operates nationwide across Zimbabwe — no project is too far.</p>
+    </div>
+    <div class="areas-grid" style="margin-top:40px">
+      <div class="area-tag">Harare</div>
+      <div class="area-tag">Bulawayo</div>
+      <div class="area-tag">Mutare</div>
+      <div class="area-tag">Gweru</div>
+      <div class="area-tag">Kwekwe</div>
+      <div class="area-tag">Kadoma</div>
+      <div class="area-tag">Masvingo</div>
+      <div class="area-tag">Chinhoyi</div>
+      <div class="area-tag">Bindura</div>
+      <div class="area-tag">Chegutu</div>
+      <div class="area-tag">Victoria Falls</div>
+      <div class="area-tag">Nationwide</div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section>
+    <div style="text-align:center">
+      <span class="section-label">Pricing</span>
+      <h2 class="section-title">Transparent Pricing</h2>
+      <p class="section-sub" style="margin:0 auto 0">No hidden fees. No surprises. We believe in honest, upfront pricing for every project.</p>
+    </div>
+    <div class="pricing-grid" style="margin-top:40px">
+      <div class="price-card">
+        <i class="fas fa-file-alt"></i>
+        <h4>Free Quotations</h4>
+        <div class="price">FREE</div>
+        <p>Every project starts with a detailed free quote</p>
+      </div>
+      <div class="price-card">
+        <i class="fas fa-layer-group"></i>
+        <h4>Ceiling Installation</h4>
+        <div class="price">$6/m²</div>
+        <p>Per square meter, labor included</p>
+      </div>
+      <div class="price-card">
+        <i class="fas fa-paint-roller"></i>
+        <h4>Wall Skimming</h4>
+        <div class="price">$4/m²</div>
+        <p>Per square meter, labor included</p>
+      </div>
+      <div class="price-card">
+        <i class="fas fa-brush"></i>
+        <h4>Painting</h4>
+        <div class="price">$4/m²</div>
+        <p>Per square meter, labor included</p>
+      </div>
+      <div class="price-card">
+        <i class="fas fa-th-large"></i>
+        <h4>Custom Cupboards</h4>
+        <div class="price">50% of Materials</div>
+        <p>Labor at half the material cost</p>
+      </div>
+    </div>
+    <div class="price-disclaimer"><i class="fas fa-info-circle" style="color:var(--gold);margin-right:8px"></i> <strong>Note:</strong> Final pricing may vary depending on project size, complexity, and materials chosen. Contact us for a personalized free quotation.</div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <span class="section-label" style="color:rgba(255,255,255,0.7)">Let's Get Started</span>
+    <h2>Ready to Transform Your Space?</h2>
+    <p>Get your free quote today — no obligation, no pressure. Our team is ready to make your vision a reality.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a onclick="showPage('contact')" class="btn btn-white"><i class="fas fa-file-alt"></i> Get a Free Quote Today</a>
+      <a href="https://wa.me/26377822595" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- FAQ (Home) -->
+  <section style="background:var(--grey-light)">
+    <span class="section-label">Common Questions</span>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does installation take? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">Project duration depends on scope. A standard room ceiling takes 1–2 days. Larger or combined projects are planned with clear timelines communicated upfront before work begins.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you provide materials? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">We can source and supply all required materials on your behalf, or you can supply your own. Our team will advise on the best materials for your specific project needs and budget.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you offer free quotations? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">Absolutely! All our quotations are 100% free and come with no obligation. We'll visit your site, assess the scope, take measurements, and provide a detailed, transparent quote.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Which areas do you serve? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">We are based in Harare but serve clients nationwide across Zimbabwe, including Bulawayo, Mutare, Gweru, Masvingo, and all surrounding towns and rural areas.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How do I get started? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">Simply call us, send a WhatsApp message, or fill in our online contact form. We'll arrange a convenient time to visit your site and provide your free quotation within 24 hours.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT TEASER -->
+  <section>
+    <div style="text-align:center">
+      <span class="section-label">Contact Us</span>
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-sub" style="margin:0 auto 32px">Have a project in mind? Reach out — we respond quickly and are happy to help.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+        <a href="tel:0711633084" class="btn btn-red"><i class="fas fa-phone"></i> 0711 633 084</a>
+        <a href="https://wa.me/26377822595" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        <a onclick="showPage('contact')" class="btn btn-outline" style="background:var(--black);color:white;border-color:var(--black)"><i class="fas fa-envelope"></i> Send a Message</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE: SERVICES -->
+<!-- ============================================================ -->
+<div id="page-services" class="page">
+  <div class="page-hero" style="--bg-img:url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1200&q=80')">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Home</span> / <span>Services</span></div>
+      <h1>Our Services</h1>
+      <p>Professional interior finishing and renovation services delivered with skill, precision, and care across Zimbabwe.</p>
+    </div>
+  </div>
+
+  <section>
+    <div style="text-align:center;max-width:600px;margin:0 auto 48px">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">Complete Interior Solutions</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" onclick="showPage('ceilings')">
+        <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+        <h3>Ceiling Installation</h3>
+        <p>From suspended ceilings to ornate cornices — professional installation to transform any space overhead.</p>
+        <div class="service-price">From $6 per m²</div>
+        <div class="service-learn">View Details <i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="service-card" onclick="showPage('wallskimming')">
+        <div class="service-icon"><i class="fas fa-paint-roller"></i></div>
+        <h3>Wall Skimming</h3>
+        <p>Perfect smooth walls, professionally prepared and finished for any decorative treatment you choose.</p>
+        <div class="service-price">From $4 per m²</div>
+        <div class="service-learn">View Details <i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="service-card" onclick="showPage('painting')">
+        <div class="service-icon"><i class="fas fa-brush"></i></div>
+        <h3>Painting</h3>
+        <p>Interior and exterior painting with premium quality paints and a flawless finish every time.</p>
+        <div class="service-price">From $4 per m²</div>
+        <div class="service-learn">View Details <i class="fas fa-arrow-right"></i></div>
+      </div>
+      <div class="service-card" onclick="showPage('cupboards')">
+        <div class="service-icon"><i class="fas fa-th-large"></i></div>
+        <h3>Custom Cupboards</h3>
+        <p>Bespoke built-in and freestanding cupboards designed and crafted to fit your exact space and style.</p>
+        <div class="service-price">Half of material price</div>
+        <div class="service-learn">View Details <i class="fas fa-arrow-right"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process on services page -->
+  <section class="process-section">
+    <div style="text-align:center;max-width:600px;margin:0 auto 0">
+      <span class="section-label" style="color:#ff7a7a">Our Approach</span>
+      <h2 class="section-title">Our Transformation Process</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="process-num">01</div>
+        <div class="process-stage">Stage 1</div>
+        <h3>Preparation</h3>
+        <ul class="process-list">
+          <li><i class="fas fa-check"></i> Site inspection</li>
+          <li><i class="fas fa-check"></i> Accurate measurements</li>
+          <li><i class="fas fa-check"></i> Surface preparation</li>
+          <li><i class="fas fa-check"></i> Material planning</li>
+        </ul>
+      </div>
+      <div class="process-card">
+        <div class="process-num">02</div>
+        <div class="process-stage">Stage 2</div>
+        <h3>Transformation</h3>
+        <ul class="process-list">
+          <li><i class="fas fa-check"></i> Ceiling installation</li>
+          <li><i class="fas fa-check"></i> Wall skimming</li>
+          <li><i class="fas fa-check"></i> Structural adjustments</li>
+          <li><i class="fas fa-check"></i> Skilled craftsmanship</li>
+        </ul>
+      </div>
+      <div class="process-card">
+        <div class="process-num">03</div>
+        <div class="process-stage">Stage 3</div>
+        <h3>Finishing & Perfection</h3>
+        <ul class="process-list">
+          <li><i class="fas fa-check"></i> Painting & detailing</li>
+          <li><i class="fas fa-check"></i> Final polishing</li>
+          <li><i class="fas fa-check"></i> Quality inspection</li>
+          <li><i class="fas fa-check"></i> Client approval</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to Start Your Project?</h2>
+    <p>Contact us today for your free site visit and quotation. No commitment required.</p>
+    <a onclick="showPage('contact')" class="btn btn-white"><i class="fas fa-file-alt"></i> Get a Free Quote</a>
+  </section>
+
+  <section style="background:var(--grey-light)">
+    <span class="section-label">Common Questions</span>
+    <h2 class="section-title">Services FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Can you handle multiple services in one project? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">Yes! We frequently handle combined projects — for example, ceiling installation followed by wall skimming and painting. This saves time and ensures consistency across all finishes.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How is the price per square meter calculated? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">We measure the total surface area to be worked on during our free site visit. The quoted rate per m² covers skilled labor. Material costs are separate and itemized clearly in your quote.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you work on weekends? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">We strive to accommodate your schedule. Weekend work can be arranged depending on project requirements and team availability. Discuss this when booking your quote.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you offer a warranty on your work? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a">We stand behind our craftsmanship. If any issues arise from our workmanship within a reasonable period, we return to address them at no additional cost. Client satisfaction is our priority.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE: CEILINGS -->
+<!-- ============================================================ -->
+<div id="page-ceilings" class="page">
+  <div class="page-hero" style="--bg-img:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80')">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Home</span> / <span onclick="showPage('services')" style="cursor:pointer">Services</span> / <span>Ceiling Installation</span></div>
+      <h1>Ceiling Installation</h1>
+      <p>Professional ceiling installation using quality boards, cornices and fixtures — transforming any room from above.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="service-detail-grid">
+      <div>
+        <span class="section-label">Ceiling Installation</span>
+        <h2 class="section-title">Professional Ceiling Solutions</h2>
+        <p style="color:var(--grey-mid);margin-bottom:20px;line-height:1.7">A well-installed ceiling transforms the entire feel of a room. Our experienced team handles everything from suspended ceilings to cornice work, ensuring a clean, lasting finish.</p>
+        <ul class="checklist">
+          <li><i class="fas fa-check-circle"></i> Suspended and drop ceilings</li>
+          <li><i class="fas fa-check-circle"></i> Cornices and decorative moldings</li>
+          <li><i class="fas fa-check-circle"></i> Ceiling board installation</li>
+          <li><i class="fas fa-check-circle"></i> Repairs and replacements</li>
+          <li><i class="fas fa-check-circle"></i> Commercial and residential</li>
+          <li><i class="fas fa-check-circle"></i> Clean, dust-managed installation</li>
+        </ul>
+        <div style="margin-top:24px;background:var(--beige);border-radius:var(--radius-sm);padding:20px;border-left:4px solid var(--red)">
+          <strong style="font-size:1.1rem">$6 per square meter</strong>
+          <p style="color:var(--grey-mid);font-size:0.85rem;margin-top:4px">Labor only. Materials quoted separately. Free site visit included.</p>
+        </div>
+        <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+          <a onclick="showPage('contact')" class="btn btn-red">Get a Free Quote</a>
+          <a href="https://wa.me/26377822595" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+      <div class="service-detail-img">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Ceiling Installation">
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div style="text-align:center;max-width:600px;margin:0 auto 0">
+      <span class="section-label" style="color:#ff7a7a">Our Process</span>
+      <h2 class="section-title">Ceiling Installation Process</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-card"><div class="process-num">01</div><div class="process-stage">Stage 1</div><h3>Preparation</h3><ul class="process-list"><li><i class="fas fa-check"></i>Site inspection & measurement</li><li><i class="fas fa-check"></i>Structural assessment</li><li><i class="fas fa-check"></i>Material sourcing plan</li></ul></div>
+      <div class="process-card"><div class="process-num">02</div><div class="process-stage">Stage 2</div><h3>Installation</h3><ul class="process-list"><li><i class="fas fa-check"></i>Frame/batten installation</li><li><i class="fas fa-check"></i>Board fixing & joining</li><li><i class="fas fa-check"></i>Cornice application</li></ul></div>
+      <div class="process-card"><div class="process-num">03</div><div class="process-stage">Stage 3</div><h3>Finishing</h3><ul class="process-list"><li><i class="fas fa-check"></i>Sanding & smoothing</li><li><i class="fas fa-check"></i>Painting & sealing</li><li><i class="fas fa-check"></i>Client approval & handover</li></ul></div>
+    </div>
+  </section>
+
+  <section style="background:var(--grey-light)">
+    <span class="section-label">Common Questions</span>
+    <h2 class="section-title">Ceiling Installation FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does ceiling installation take? <i class="fas fa-chevron-down"></i></button><div class="faq-a">A standard single room takes 1–2 days. Larger spaces or full-house projects are planned in advance with a clear timeline provided in your quote.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What types of ceiling boards do you use? <i class="fas fa-chevron-down"></i></button><div class="faq-a">We work with gypsum board, Nutec, and chipboard depending on your requirements and budget. We advise on the best option for your specific space during the site visit.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you repair damaged ceilings? <i class="fas fa-chevron-down"></i></button><div class="faq-a">Yes, we handle ceiling repairs including water damage, cracks, and sagging sections. We'll assess the damage and provide an honest, detailed repair quote.</div></div>
+    </div>
+  </section>
+  <section class="cta-section"><h2>Ready for a New Ceiling?</h2><p>Get your free ceiling installation quote today.</p><a onclick="showPage('contact')" class="btn btn-white"><i class="fas fa-file-alt"></i> Get Free Quote</a></section>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE: WALL SKIMMING -->
+<!-- ============================================================ -->
+<div id="page-wallskimming" class="page">
+  <div class="page-hero" style="--bg-img:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80')">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Home</span> / <span onclick="showPage('services')" style="cursor:pointer">Services</span> / <span>Wall Skimming</span></div>
+      <h1>Wall Skimming</h1>
+      <p>Achieve flawlessly smooth walls with our expert skimming and plastering service, ready for any paint or wallpaper finish.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="service-detail-grid">
+      <div>
+        <span class="section-label">Wall Skimming</span>
+        <h2 class="section-title">Perfectly Smooth Walls</h2>
+        <p style="color:var(--grey-mid);margin-bottom:20px;line-height:1.7">Uneven and rough walls detract from any interior. Our wall skimming specialists apply a precise thin coat of plaster to create a perfectly level, smooth surface ready for your chosen finish.</p>
+        <ul class="checklist">
+          <li><i class="fas fa-check-circle"></i> Full wall skimming</li>
+          <li><i class="fas fa-check-circle"></i> Patch repairs and leveling</li>
+          <li><i class="fas fa-check-circle"></i> Interior and exterior walls</li>
+          <li><i class="fas fa-check-circle"></i> Ready for paint or wallpaper</li>
+          <li><i class="fas fa-check-circle"></i> Residential and commercial</li>
+          <li><i class="fas fa-check-circle"></i> Clean and tidy workmanship</li>
+        </ul>
+        <div style="margin-top:24px;background:var(--beige);border-radius:var(--radius-sm);padding:20px;border-left:4px solid var(--red)">
+          <strong style="font-size:1.1rem">$4 per square meter</strong>
+          <p style="color:var(--grey-mid);font-size:0.85rem;margin-top:4px">Labor only. Materials quoted separately. Free site visit included.</p>
+        </div>
+        <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+          <a onclick="showPage('contact')" class="btn btn-red">Get a Free Quote</a>
+          <a href="https://wa.me/26377822595" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+      <div class="service-detail-img">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Wall Skimming">
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div style="text-align:center;max-width:600px;margin:0 auto 0">
+      <span class="section-label" style="color:#ff7a7a">Our Process</span>
+      <h2 class="section-title">Wall Skimming Process</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-card"><div class="process-num">01</div><div class="process-stage">Stage 1</div><h3>Surface Assessment</h3><ul class="process-list"><li><i class="fas fa-check"></i>Wall inspection</li><li><i class="fas fa-check"></i>Crack & damage mapping</li><li><i class="fas fa-check"></i>Surface cleaning & prep</li></ul></div>
+      <div class="process-card"><div class="process-num">02</div><div class="process-stage">Stage 2</div><h3>Skimming</h3><ul class="process-list"><li><i class="fas fa-check"></i>First coat application</li><li><i class="fas fa-check"></i>Leveling & smoothing</li><li><i class="fas fa-check"></i>Second coat as needed</li></ul></div>
+      <div class="process-card"><div class="process-num">03</div><div class="process-stage">Stage 3</div><h3>Final Finish</h3><ul class="process-list"><li><i class="fas fa-check"></i>Fine sanding</li><li><i class="fas fa-check"></i>Dust removal & cleanup</li><li><i class="fas fa-check"></i>Client inspection & approval</li></ul></div>
+    </div>
+  </section>
+
+  <section style="background:var(--grey-light)">
+    <span class="section-label">Common Questions</span>
+    <h2 class="section-title">Wall Skimming FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is wall skimming? <i class="fas fa-chevron-down"></i></button><div class="faq-a">Wall skimming is the application of a thin layer of finishing plaster over existing walls to create a perfectly flat and smooth surface. It's ideal for walls that are uneven, textured, or have minor cracks.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long before I can paint after skimming? <i class="fas fa-chevron-down"></i></button><div class="faq-a">We recommend waiting at least 5–7 days for the skim coat to fully cure before painting, depending on humidity and temperature. We'll advise on the right timing for your specific conditions.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can you skim just part of a wall? <i class="fas fa-chevron-down"></i></button><div class="faq-a">Yes, we can do patch repairs and spot skimming on damaged sections. However, for the best and most uniform result, we usually recommend skimming entire walls rather than just sections.</div></div>
+    </div>
+  </section>
+  <section class="cta-section"><h2>Ready for Smooth Walls?</h2><p>Get your free wall skimming quote today.</p><a onclick="showPage('contact')" class="btn btn-white"><i class="fas fa-file-alt"></i> Get Free Quote</a></section>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE: PAINTING -->
+<!-- ============================================================ -->
+<div id="page-painting" class="page">
+  <div class="page-hero" style="--bg-img:url('https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1200&q=80')">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Home</span> / <span onclick="showPage('services')" style="cursor:pointer">Services</span> / <span>Painting</span></div>
+      <h1>Professional Painting</h1>
+      <p>Interior and exterior painting services using premium paints for a flawless, lasting, and beautiful finish.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="service-detail-grid">
+      <div>
+        <span class="section-label">Painting</span>
+        <h2 class="section-title">Premium Painting Services</h2>
+        <p style="color:var(--grey-mid);margin-bottom:20px;line-height:1.7">Color transforms a space completely. Our professional painting team delivers clean, precise work using quality paints and proper preparation — giving you a finish that looks great and lasts for years.</p>
+        <ul class="checklist">
+          <li><i class="fas fa-check-circle"></i> Interior wall & ceiling painting</li>
+          <li><i class="fas fa-check-circle"></i> Exterior & facade painting</li>
+          <li><i class="fas fa-check-circle"></i> Feature wall treatments</li>
+          <li><i class="fas fa-check-circle"></i> Primer and undercoat application</li>
+          <li><i class="fas fa-check-circle"></i> Color consultation available</li>
+          <li><i class="fas fa-check-circle"></i> Multiple coat application</li>
+        </ul>
+        <div style="margin-top:24px;background:var(--beige);border-radius:var(--radius-sm);padding:20px;border-left:4px solid var(--red)">
+          <strong style="font-size:1.1rem">$4 per square meter</strong>
+          <p style="color:var(--grey-mid);font-size:0.85rem;margin-top:4px">Labor only. Materials quoted separately. Free site visit included.</p>
+        </div>
+        <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+          <a onclick="showPage('contact')" class="btn btn-red">Get a Free Quote</a>
+          <a href="https://wa.me/26377822595" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+      <div class="service-detail-img">
+        <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=80" alt="Professional Painting">
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div style="text-align:center;max-width:600px;margin:0 auto 0">
+      <span class="section-label" style="color:#ff7a7a">Our Process</span>
+      <h2 class="section-title">Painting Process</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-card"><div class="process-num">01</div><div class="process-stage">Stage 1</div><h3>Preparation</h3><ul class="process-list"><li><i class="fas fa-check"></i>Surface cleaning & repair</li><li><i class="fas fa-check"></i>Masking & protection</li><li><i class="fas fa-check"></i>Primer application</li></ul></div>
+      <div class="process-card"><div class="process-num">02</div><div class="process-stage">Stage 2</div><h3>Application</h3><ul class="process-list"><li><i class="fas fa-check"></i>First coat application</li><li><i class="fas fa-check"></i>Curing time respected</li><li><i class="fas fa-check"></i>Second coat for depth</li></ul></div>
+      <div class="process-card"><div class="process-num">03</div><div class="process-stage">Stage 3</div><h3>Finishing</h3><ul class="process-list"><li><i class="fas fa-check"></i>Touch-ups & edge work</li><li><i class="fas fa-check"></i>Mask removal & cleanup</li><li><i class="fas fa-check"></i>Client walkthrough & approval</li></ul></div>
+    </div>
+  </section>
+
+  <section style="background:var(--grey-light)">
+    <span class="section-label">Common Questions</span>
+    <h2 class="section-title">Painting FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you help choose paint colors? <i class="fas fa-chevron-down"></i></button><div class="faq-a">Yes! Our team can advise on color choices that complement your space, lighting, and decor. We work with various paint brands and can provide swatches before committing to a color.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How many coats of paint do you apply? <i class="fas fa-chevron-down"></i></button><div class="faq-a">We typically apply a primer plus two topcoats for the best coverage and durability. In some cases, especially with dark or vibrant colors, additional coats may be required.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can you paint over existing paint? <i class="fas fa-chevron-down"></i></button><div class="faq-a">Yes. We assess the existing paintwork and determine whether it needs to be stripped, sealed, or can simply be painted over. This is evaluated during the free site visit.</div></div>
+    </div>
+  </section>
+  <section class="cta-section"><h2>Ready for a Fresh Coat?</h2><p>Get your free painting quote today.</p><a onclick="showPage('contact')" class="btn btn-white"><i class="fas fa-file-alt"></i> Get Free Quote</a></section>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE: CUPBOARDS -->
+<!-- ============================================================ -->
+<div id="page-cupboards" class="page">
+  <div class="page-hero" style="--bg-img:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80')">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Home</span> / <span onclick="showPage('services')" style="cursor:pointer">Services</span> / <span>Custom Cupboards</span></div>
+      <h1>Custom Cupboards</h1>
+      <p>Bespoke built-in and freestanding cupboards designed and crafted to maximize your space beautifully.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="service-detail-grid">
+      <div>
+        <span class="section-label">Custom Cupboards</span>
+        <h2 class="section-title">Built to Fit Your Space Perfectly</h2>
+        <p style="color:var(--grey-mid);margin-bottom:20px;line-height:1.7">Every space is different. Our custom cupboard service ensures that your storage solutions are designed and crafted specifically for your room, style, and needs — no off-the-shelf compromises.</p>
+        <ul class="checklist">
+          <li><i class="fas fa-check-circle"></i> Built-in bedroom wardrobes</li>
+          <li><i class="fas fa-check-circle"></i> Kitchen cupboards & cabinets</li>
+          <li><i class="fas fa-check-circle"></i> Bathroom vanity units</li>
+          <li><i class="fas fa-check-circle"></i> Office shelving & storage</li>
+          <li><i class="fas fa-check-circle"></i> Custom finishes and hardware</li>
+          <li><i class="fas fa-check-circle"></i> Maximized storage design</li>
+        </ul>
+        <div style="margin-top:24px;background:var(--beige);border-radius:var(--radius-sm);padding:20px;border-left:4px solid var(--red)">
+          <strong style="font-size:1.1rem">Labor = Half of Material Cost</strong>
+          <p style="color:var(--grey-mid);font-size:0.85rem;margin-top:4px">We charge labor at 50% of the total material cost. Materials are quoted separately. Free design consultation included.</p>
+        </div>
+        <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+          <a onclick="showPage('contact')" class="btn btn-red">Get a Free Quote</a>
+          <a href="https://wa.me/26377822595" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+      <div class="service-detail-img">
+        <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80" alt="Custom Cupboards">
+      </div>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <div style="text-align:center;max-width:600px;margin:0 auto 0">
+      <span class="section-label" style="color:#ff7a7a">Our Process</span>
+      <h2 class="section-title">Custom Cupboard Process</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-card"><div class="process-num">01</div><div class="process-stage">Stage 1</div><h3>Design & Planning</h3><ul class="process-list"><li><i class="fas fa-check"></i>Space measurement</li><li><i class="fas fa-check"></i>Design consultation</li><li><i class="fas fa-check"></i>Material & finish selection</li></ul></div>
+      <div class="process-card"><div class="process-num">02</div><div class="process-stage">Stage 2</div><h3>Fabrication & Fitting</h3><ul class="process-list"><li><i class="fas fa-check"></i>Custom cutting & assembly</li><li><i class="fas fa-check"></i>On-site installation</li><li><i class="fas fa-check"></i>Hardware fitting</li></ul></div>
+      <div class="process-card"><div class="process-num">03</div><div class="process-stage">Stage 3</div><h3>Finishing</h3><ul class="process-list"><li><i class="fas fa-check"></i>Sanding & painting/varnishing</li><li><i class="fas fa-check"></i>Final adjustments</li><li><i class="fas fa-check"></i>Client approval & handover</li></ul></div>
+    </div>
+  </section>
+
+  <section style="background:var(--grey-light)">
+    <span class="section-label">Common Questions</span>
+    <h2 class="section-title">Cupboards FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How is cupboard pricing calculated? <i class="fas fa-chevron-down"></i></button><div class="faq-a">We charge labor at 50% of the total material cost. For example, if materials cost $1,000, our labor fee is $500. This transparent model ensures fair pricing regardless of project size.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I choose my own materials or finish? <i class="fas fa-chevron-down"></i></button><div class="faq-a">Absolutely. We offer various board types, finishes, and hardware options. We can guide you through the choices during your design consultation, or you can supply your own materials.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you design cupboards from scratch? <i class="fas fa-chevron-down"></i></button><div class="faq-a">Yes. We offer a full design and build service — from initial concept and measurements through to fabrication and installation. We tailor everything to your exact space and requirements.</div></div>
+    </div>
+  </section>
+  <section class="cta-section"><h2>Ready for Custom Cupboards?</h2><p>Get your free design consultation and quote today.</p><a onclick="showPage('contact')" class="btn btn-white"><i class="fas fa-file-alt"></i> Get Free Quote</a></section>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE: ABOUT -->
+<!-- ============================================================ -->
+<div id="page-about" class="page">
+  <div class="page-hero" style="--bg-img:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80')">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Home</span> / <span>About Us</span></div>
+      <h1>About Kenla Home Style</h1>
+      <p>Zimbabwe's trusted interior finishing specialists, built on quality, integrity, and a passion for beautiful spaces.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Kenla Home Style Team">
+        <div class="about-img-badge">
+          <div class="num">100+</div>
+          <div class="label">Projects Completed</div>
+        </div>
+      </div>
+      <div>
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-title">Zimbabwe's Interior Finishing Specialists</h2>
+        <p style="color:var(--grey-mid);margin-bottom:16px;line-height:1.8">Kenla Home Style is a professional interior finishing and renovation company based in Harare, Zimbabwe. With over 3 years of industry experience, we have built a solid reputation for delivering high-quality workmanship at fair and transparent prices.</p>
+        <p style="color:var(--grey-mid);margin-bottom:24px;line-height:1.8">From ceiling installation to custom cupboards, wall skimming to premium painting — we handle every project with the same commitment to excellence. We work with homeowners, landlords, property developers, and commercial clients across Zimbabwe.</p>
+        <div class="values-list">
+          <div class="value-item"><div class="value-icon"><i class="fas fa-medal"></i></div><div><h4>Quality First</h4><p>We never cut corners. Every surface we touch reflects our commitment to excellence.</p></div></div>
+          <div class="value-item"><div class="value-icon"><i class="fas fa-handshake"></i></div><div><h4>Honest Pricing</h4><p>Transparent, upfront quotes with no hidden costs or last-minute surprises.</p></div></div>
+          <div class="value-item"><div class="value-icon"><i class="fas fa-clock"></i></div><div><h4>On Time, Every Time</h4><p>We respect your schedule and work to agreed timelines without compromising quality.</p></div></div>
+          <div class="value-item"><div class="value-icon"><i class="fas fa-users"></i></div><div><h4>Client Satisfaction</h4><p>Your approval is our final measure of success — we don't consider a job done until you're happy.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--grey-light)">
+    <div style="text-align:center">
+      <span class="section-label">Our Numbers</span>
+      <h2 class="section-title">Why Clients Choose Us</h2>
+    </div>
+    <div class="why-grid" style="margin-top:40px">
+      <div class="why-card"><div class="why-num">3+</div><div class="why-label">Years in Business</div></div>
+      <div class="why-card"><div class="why-num">100+</div><div class="why-label">Happy Clients</div></div>
+      <div class="why-card"><div class="why-num">4</div><div class="why-label">Core Services</div></div>
+      <div class="why-card"><div class="why-num">ZW</div><div class="why-label">Nationwide Service</div></div>
+    </div>
+  </section>
+
+  <section class="cta-section"><h2>Let's Work Together</h2><p>Ready to give your space the professional finish it deserves?</p><a onclick="showPage('contact')" class="btn btn-white"><i class="fas fa-file-alt"></i> Get a Free Quote</a></section>
+
+  <section style="background:var(--grey-light)">
+    <span class="section-label">Common Questions</span>
+    <h2 class="section-title">About Us FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long has Kenla Home Style been operating? <i class="fas fa-chevron-down"></i></button><div class="faq-a">Kenla Home Style has been delivering professional interior finishing services for over 3 years, building a strong reputation for quality and reliability across Zimbabwe.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you work on commercial as well as residential projects? <i class="fas fa-chevron-down"></i></button><div class="faq-a">Yes, we handle both. From single rooms and homes to offices, retail spaces, and large commercial properties — we have the team and experience for projects of all scales.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Are your workers trained professionals? <i class="fas fa-chevron-down"></i></button><div class="faq-a">All our team members are skilled tradespeople with hands-on experience in their specific areas. We take quality control seriously and supervise all projects closely.</div></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE: GALLERY -->
+<!-- ============================================================ -->
+<div id="page-gallery" class="page">
+  <div class="page-hero" style="--bg-img:url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80')">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Home</span> / <span>Gallery</span></div>
+      <h1>Our Work Gallery</h1>
+      <p>Browse through a selection of completed projects showcasing our quality and craftsmanship across Zimbabwe.</p>
+    </div>
+  </div>
+
+  <section>
+    <div style="text-align:center;margin-bottom:40px">
+      <span class="section-label">Portfolio</span>
+      <h2 class="section-title">Transformation Results</h2>
+      <p class="section-sub" style="margin:0 auto">Every project tells a story. Here's a glimpse into the spaces we've transformed.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80" alt="Ceiling Installation"><div class="gallery-overlay"><span>Ceiling Installation</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&q=80" alt="Living Room"><div class="gallery-overlay"><span>Interior Design</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&q=80" alt="Bedroom"><div class="gallery-overlay"><span>Bedroom Finishing</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=400&q=80" alt="Painting"><div class="gallery-overlay"><span>Wall Painting</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=400&q=80" alt="Cupboards"><div class="gallery-overlay"><span>Custom Cupboards</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&q=80" alt="Modern Interior"><div class="gallery-overlay"><span>Modern Interior</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&q=80" alt="Kitchen"><div class="gallery-overlay"><span>Kitchen Renovation</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400&q=80" alt="Office Space"><div class="gallery-overlay"><span>Office Finishing</span></div></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Renovation"><div class="gallery-overlay"><span>Full Renovation</span></div></div>
+    </div>
+  </section>
+
+  <section class="cta-section"><h2>Want Results Like These?</h2><p>Get your free quote and let's transform your space.</p><a onclick="showPage('contact')" class="btn btn-white"><i class="fas fa-file-alt"></i> Get a Free Quote</a></section>
+
+  <section style="background:var(--grey-light)">
+    <span class="section-label">Common Questions</span>
+    <h2 class="section-title">Gallery FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I see more examples of your work? <i class="fas fa-chevron-down"></i></button><div class="faq-a">Yes! Contact us on WhatsApp and we can share additional project photos specific to the type of work you need. We're happy to show examples relevant to your project.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you take photos of all your projects? <i class="fas fa-chevron-down"></i></button><div class="faq-a">We document most of our projects where clients give permission. Before-and-after photographs help us demonstrate the transformation quality and assist future clients in making decisions.</div></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE: FAQ -->
+<!-- ============================================================ -->
+<div id="page-faq" class="page">
+  <div class="page-hero" style="--bg-img:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80')">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Home</span> / <span>FAQ</span></div>
+      <h1>Frequently Asked Questions</h1>
+      <p>Find answers to the most common questions about our services, pricing, and process.</p>
+    </div>
+  </div>
+
+  <section>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+      <div>
+        <span class="section-label">General</span>
+        <h2 class="section-title" style="font-size:1.8rem">General Questions</h2>
+        <div class="faq-list" style="margin-top:20px">
+          <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you offer free quotations? <i class="fas fa-chevron-down"></i></button><div class="faq-a">Yes, absolutely! All our quotations are 100% free and come with no obligation. We'll visit your site, take measurements, and deliver a detailed written quote within 24 hours.</div></div>
+          <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Which areas of Zimbabwe do you serve? <i class="fas fa-chevron-down"></i></button><div class="faq-a">We are based in Harare but serve clients nationwide. Whether you're in Bulawayo, Mutare, Masvingo, or any other city or town — we will travel to your project.</div></div>
+          <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do I get a quote? <i class="fas fa-chevron-down"></i></button><div class="faq-a">Simply contact us by phone, WhatsApp, or via our online form. We'll arrange a convenient site visit and provide your quote within 24 hours of the inspection.</div></div>
+          <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you work on weekends? <i class="fas fa-chevron-down"></i></button><div class="faq-a">We can accommodate weekend work depending on project requirements and team availability. Please discuss your preferred schedule when booking your quotation.</div></div>
+          <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you guarantee your work? <i class="fas fa-chevron-down"></i></button><div class="faq-a">We stand fully behind our workmanship. If any issues arise from our work within a reasonable period, we will return and rectify them at no additional charge. Client satisfaction is our priority.</div></div>
+        </div>
+      </div>
+      <div>
+        <span class="section-label">Services & Pricing</span>
+        <h2 class="section-title" style="font-size:1.8rem">Services & Pricing</h2>
+        <div class="faq-list" style="margin-top:20px">
+          <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does installation take? <i class="fas fa-chevron-down"></i></button><div class="faq-a">It depends on the project size. A single room ceiling takes 1–2 days. Larger projects involving multiple services are planned in advance with a clear schedule provided in your quote.</div></div>
+          <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do you provide materials? <i class="fas fa-chevron-down"></i></button><div class="faq-a">We can source and supply all materials on your behalf, or you can supply your own. Our team will advise on the best materials for your project during the site visit.</div></div>
+          <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What payment methods do you accept? <i class="fas fa-chevron-down"></i></button><div class="faq-a">We accept USD cash, Zimbabwean dollars, EcoCash, and bank transfer. Payment terms are discussed and agreed upon before work begins, often with a deposit and balance on completion.</div></div>
+          <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can you handle large commercial projects? <i class="fas fa-chevron-down"></i></button><div class="faq-a">Yes. We have the team and resources to handle large-scale commercial projects including offices, retail spaces, hotels, and apartment complexes. Contact us to discuss your requirements.</div></div>
+          <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do prices vary for different project sizes? <i class="fas fa-chevron-down"></i></button><div class="faq-a">Our per-square-meter rates are standardized, but total project cost naturally depends on size. Larger projects may attract slightly different material pricing. All costs are itemized in your free quote.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section"><h2>Still Have Questions?</h2><p>Contact us directly and we'll answer any questions you have about your project.</p><div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap"><a onclick="showPage('contact')" class="btn btn-white"><i class="fas fa-envelope"></i> Contact Us</a><a href="https://wa.me/26377822595" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Ask on WhatsApp</a></div></section>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE: CONTACT -->
+<!-- ============================================================ -->
+<div id="page-contact" class="page">
+  <div class="page-hero" style="--bg-img:url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&q=80')">
+    <div class="page-hero-content">
+      <div class="breadcrumb"><span onclick="showPage('home')" style="cursor:pointer">Home</span> / <span>Contact</span></div>
+      <h1>Contact Us</h1>
+      <p>Get in touch for your free quotation, site visit, or any questions about your project.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="contact-grid">
+      <div>
+        <span class="section-label">Get in Touch</span>
+        <h2 class="section-title">Let's Discuss Your Project</h2>
+        <p style="color:var(--grey-mid);margin-bottom:32px;line-height:1.7">We offer free site visits and quotations. Reach out via phone, WhatsApp, email, or the contact form. We typically respond within a few hours.</p>
+        
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <div><h4>Phone</h4><a href="tel:0711633084">0711 633 084</a></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <div><h4>WhatsApp</h4><a href="https://wa.me/26377822595" target="_blank">Chat on WhatsApp</a></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div><h4>Email</h4><a href="mailto:kenlahomestyle@gmail.com">kenlahomestyle@gmail.com</a></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div><h4>Address</h4><p>1309 Stoneridge Park<br>Harare, Zimbabwe</p></div>
+        </div>
+        
+        <iframe 
+          class="map-embed"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.6!2d31.0!3d-17.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sStoneridge+Park+Harare+Zimbabwe!5e0!3m2!1sen!2szw!4v1"
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+      
+      <div>
+        <div style="background:white;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow)">
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:24px">Request a Free Quote</h3>
+          <form class="contact-form" onsubmit="handleForm(event)">
+            <div class="form-row">
+              <div class="form-group"><label>First Name *</label><input type="text" placeholder="Your first name" required></div>
+              <div class="form-group"><label>Last Name *</label><input type="text" placeholder="Your last name" required></div>
+            </div>
+            <div class="form-group"><label>Phone / WhatsApp *</label><input type="tel" placeholder="e.g. 0777 000 000" required></div>
+            <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+            <div class="form-group">
+              <label>Service Required *</label>
+              <select required>
+                <option value="">Select a service...</option>
+                <option>Ceiling Installation</option>
+                <option>Wall Skimming</option>
+                <option>Painting</option>
+                <option>Custom Cupboards</option>
+                <option>Multiple Services</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Region / Area *</label>
+              <select required>
+                <option value="">Select your region...</option>
+                <option>Harare</option>
+                <option>Bulawayo</option>
+                <option>Mutare</option>
+                <option>Gweru</option>
+                <option>Kwekwe</option>
+                <option>Kadoma</option>
+                <option>Masvingo</option>
+                <option>Chinhoyi</option>
+                <option>Bindura</option>
+                <option>Chegutu</option>
+                <option>Victoria Falls</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Project Details</label><textarea placeholder="Briefly describe your project — room size, specific requirements, any questions..."></textarea></div>
+            <button type="submit" class="btn btn-red" style="width:100%;justify-content:center"><i class="fas fa-paper-plane"></i> Send Request</button>
+          </form>
+          <div id="form-success" style="display:none;text-align:center;padding:32px;color:var(--red)">
+            <i class="fas fa-check-circle" style="font-size:3rem;margin-bottom:16px;display:block"></i>
+            <h3 style="font-family:'Playfair Display',serif;margin-bottom:8px">Thank You!</h3>
+            <p style="color:var(--grey-mid)">We've received your request and will be in touch within 24 hours. You can also reach us instantly on WhatsApp.</p>
+            <a href="https://wa.me/263777822595" target="_blank" class="btn btn-whatsapp" style="margin-top:16px"><i class="fab fa-whatsapp"></i> WhatsApp Us Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--grey-light)">
+    <span class="section-label">Common Questions</span>
+    <h2 class="section-title">Contact FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How quickly will you respond to my enquiry? <i class="fas fa-chevron-down"></i></button><div class="faq-a">We aim to respond to all enquiries within a few hours during business hours. WhatsApp messages are typically answered fastest. You'll receive a detailed quote within 24 hours of our site visit.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is there a call-out fee for quotations? <i class="fas fa-chevron-down"></i></button><div class="faq-a">No — our site visits and quotations are completely free of charge, with no obligation. We believe in letting the quality of our quote and work speak for itself.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I request a quote for a project outside Harare? <i class="fas fa-chevron-down"></i></button><div class="faq-a">Absolutely. We serve all regions across Zimbabwe. Travel costs to areas outside Harare may be discussed and included in your quote, depending on the project scope and distance.</div></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================ -->
+<!-- FOOTER (shown on all pages via JS) -->
+<!-- ============================================================ -->
+<footer id="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3><span>Kenla</span> Home Style</h3>
+      <p>Zimbabwe's trusted interior finishing specialists. Professional ceilings, wall skimming, painting, and custom cupboards — delivered with quality and care nationwide.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/share/17ZKQ6Yklq/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="mailto:kenlahomestyle@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/263777822595" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('services')">Services</a></li>
+        <li><a onclick="showPage('about')">About Us</a></li>
+        <li><a onclick="showPage('gallery')">Gallery</a></li>
+        <li><a onclick="showPage('faq')">FAQ</a></li>
+        <li><a onclick="showPage('contact')">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a onclick="showPage('ceilings')">Ceiling Installation</a></li>
+        <li><a onclick="showPage('wallskimming')">Wall Skimming</a></li>
+        <li><a onclick="showPage('painting')">Painting</a></li>
+        <li><a onclick="showPage('cupboards')">Custom Cupboards</a></li>
+      </ul>
+      <div style="margin-top:24px">
+        <h4>Contact</h4>
+        <p style="font-size:0.85rem;margin-bottom:6px"><i class="fas fa-phone" style="color:var(--red);margin-right:8px"></i><a href="tel:0711633084" style="color:rgba(255,255,255,0.6);text-decoration:none">0711 633 084</a></p>
+        <p style="font-size:0.85rem;margin-bottom:6px"><i class="fas fa-map-marker-alt" style="color:var(--red);margin-right:8px"></i>1309 Stoneridge Park, Harare</p>
+        <p style="font-size:0.85rem"><i class="fas fa-envelope" style="color:var(--red);margin-right:8px"></i><a href="mailto:kenlahomestyle@gmail.com" style="color:rgba(255,255,255,0.6);text-decoration:none">kenlahomestyle@gmail.com</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span>Kenla Home Style</span> 2026. All Rights Reserved.</p>
+    <p style="font-size:0.8rem">Professional Interior Finishing | Harare, Zimbabwe</p>
+  </div>
+</footer>
+
+<script>
+// PAGE NAVIGATION
+const pages = ['home','services','about','gallery','faq','contact','ceilings','wallskimming','painting','cupboards'];
+const navPages = ['home','services','about','gallery','faq','contact'];
+
+function showPage(page) {
+  pages.forEach(p => {
+    const el = document.getElementById('page-'+p);
+    if(el) el.classList.remove('active');
+  });
+  const target = document.getElementById('page-'+page);
+  if(target) { target.classList.add('active'); }
+  
+  // Update nav active state
+  navPages.forEach(p => {
+    const el = document.getElementById('nav-'+p);
+    if(el) el.classList.remove('active-link');
+  });
+  const navEl = document.getElementById('nav-'+page);
+  if(navEl) navEl.classList.add('active-link');
+  else if(['ceilings','wallskimming','painting','cupboards'].includes(page)) {
+    document.getElementById('nav-services').classList.add('active-link');
+  }
+  
+  window.scrollTo({top:0, behavior:'smooth'});
+  closeMenu();
+}
+
+// HAMBURGER
+function toggleMenu() {
+  const h = document.getElementById('hamburger');
+  const m = document.getElementById('mobileMenu');
+  h.classList.toggle('open');
+  m.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// FAQ
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const allBtns = document.querySelectorAll('.faq-q.open');
+  allBtns.forEach(b => {
+    if(b !== btn) { b.classList.remove('open'); b.nextElementSibling.classList.remove('open'); }
+  });
+  btn.classList.toggle('open');
+  answer.classList.toggle('open');
+}
+
+// FORM
+function handleForm(e) {
+  e.preventDefault();
+  e.target.style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+}
+
+// SCROLL ANIMATIONS
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.service-card, .process-card, .why-card, .price-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
