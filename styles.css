@@ -48,23 +48,12 @@ nav {
   text-decoration: none;
 }
 
-.nav-logo-text { 
-  font-family: 'Playfair Display', serif; 
-  color: var(--white); 
-  font-size: 1.1rem; 
-  font-weight: 700;
-  line-height: 1.1;
-}
-
 .nav-logo-text span { color: var(--red); }
 
 .nav-logo-icon {
   width: 44px; height: 44px;
-  background: var(--red);
   border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Playfair Display', serif;
-  color: white; font-weight: 900; font-size: 1.1rem;
+  object-fit: cover;
 }
 
 .nav-links {
@@ -185,7 +174,7 @@ section { padding: 80px 5%; }
 .hero {
   min-height: 100vh;
   background: linear-gradient(135deg, rgba(17,17,17,0.88) 0%, rgba(17,17,17,0.7) 60%, rgba(215,32,32,0.25) 100%),
-    url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&q=80') center/cover no-repeat;
+    url('images/cover\ photo.jpg') center/cover no-repeat;
   display: flex; align-items: center;
   padding-top: 100px;
   position: relative;
@@ -505,6 +494,12 @@ footer {
   color: white; font-size: 1.3rem; margin-bottom: 12px;
 }
 .footer-brand h3 span { color: var(--red); }
+.footer-logo-icon {
+  width: 60px; height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
 .footer-brand p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; }
 .footer-socials { display: flex; gap: 12px; }
 .social-icon {
